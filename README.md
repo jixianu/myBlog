@@ -24,6 +24,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 2.config/index.js dev.port 修改为8001
 3.修改router
 4.配置cssloader
-5.
+5.配置favicon路径
 
 图片：https://dribbble.com/colors/93C943

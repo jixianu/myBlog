@@ -3,14 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Tag from './components/tag.vue'
 import '../static/style/reset.css'
 import './assets/style/index.css'
+import './assets/font/iconfont.css'
+import './assets/font/iconfont.js'
 // import './assets/js/rem.js'
 
 Vue.config.productionTip = false
-
+Vue.component('tag', Tag)
 /* eslint-disable no-new */
-new Vue({
+let VueCase = new Vue({
   el: '#app',
   router,
   template: '<App/>',
