@@ -7,7 +7,7 @@ import Tag from './components/tag.vue'
 import '../static/style/reset.css'
 import './assets/style/index.css'
 import './assets/font/iconfont.css'
-import './assets/font/iconfont.js'
+import './assets/js/iconfont.js'
 // import './assets/js/rem.js'
 
 Vue.config.productionTip = false

@@ -6,7 +6,7 @@
 <style lang='less' scoped>
 	
   #aside {
-    width: 28%;
+    width: 25%;
     display: inline-block;
     float: right;
     border: 1px solid #CCC;
