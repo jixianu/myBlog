@@ -1,0 +1,243 @@
+.markdown ol,.markdown td,.markdown th,.markdown ul {
+	padding:0
+}
+.select2-container--classic.select2-container--open .select2-dropdown {
+	border-color:#5897fb
+}
+.markdown {
+	color:#636b6f;
+	overflow:hidden;
+	line-height:2;
+	word-wrap:break-word
+}
+.markdown a {
+	background:0 0;
+	color:#16A085;
+	text-decoration:none
+}
+.hljs-link,.markdown a:active,.markdown a:focus,.markdown a:hover {
+	text-decoration:underline
+}
+.markdown a:active,.markdown a:hover {
+	outline:0
+}
+.markdown ol li {
+	margin:8px 0
+}
+.markdown pre[class*=language-] {
+	margin:1.2em 0!important
+}
+.markdown strong {
+	font-weight:700
+}
+.markdown h1 {
+	margin:.67em 0
+}
+.markdown img {
+	border:0
+}
+.markdown hr {
+	box-sizing:content-box
+}
+.markdown *,.markdown img {
+	box-sizing:border-box
+}
+.markdown hr:after,.markdown hr:before {
+	display:table;
+	content:" "
+}
+.markdown h1,.markdown h2 {
+	padding-bottom:.3em;
+	border-bottom:2px solid #eee
+}
+.markdown ol ol {
+	list-style-type:lower-roman
+}
+.markdown dd {
+	margin-left:0
+}
+.markdown code,.markdown pre {
+	font-family:monaco,Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	font-size:1em
+}
+.markdown .markdown-body>:first-child {
+	margin-top:0!important
+}
+.markdown .markdown-body>:last-child {
+	margin-bottom:0!important
+}
+.markdown .anchor {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	display:block;
+	padding-right:6px;
+	padding-left:30px;
+	margin-left:-30px
+}
+.markdown .anchor:focus {
+	outline:0
+}
+.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6 {
+	position:relative;
+	margin-top:1em;
+	margin-bottom:16px;
+	font-weight:700;
+	line-height:1.4
+}
+.markdown h1 {
+	font-size:2.25em;
+	line-height:1.2
+}
+.markdown h2 {
+	font-size:1.75em;
+	line-height:1.225
+}
+.markdown h3 {
+	font-size:1.5em;
+	line-height:1.43
+}
+.markdown h4 {
+	font-size:1.25em
+}
+.markdown h5,.markdown h6 {
+	font-size:1em
+}
+.markdown h6 {
+	color:#777
+}
+.markdown blockquote,.markdown dl,.markdown ol,.markdown p,.markdown pre,.markdown table,.markdown ul {
+	margin-top:0;
+	margin-bottom:10px
+}
+.markdown hr {
+	overflow:hidden;
+	background:#e7e7e7;
+	height:4px;
+	padding:0;
+	margin:16px 0;
+	border:0
+}
+.markdown ol,.markdown ul {
+	padding-left:2em
+}
+.markdown ol ol,.markdown ol ul {
+	margin-top:0;
+	margin-bottom:0
+}
+.markdown dl dt,.markdown li>p {
+	margin-top:16px
+}
+.markdown dl {
+	padding:0
+}
+.markdown dl dt {
+	padding:0;
+	font-size:1em;
+	font-weight:700
+}
+.markdown dl dd {
+	padding:0 16px;
+	margin-bottom:16px
+}
+.markdown blockquote>:first-child {
+	margin-top:20
+}
+.markdown blockquote>:last-child {
+	margin-bottom:20
+}
+.markdown blockquote {
+	font-size:inherit;
+	color:#7F8C8D;
+	border-left:4px solid #ecf0f1;
+	margin:20px 0!important;
+	background-color:rgba(102,128,153,.03);
+	padding:6px 8px
+}
+.markdown table {
+	border-collapse:collapse;
+	border-spacing:0;
+	display:block;
+	width:100%;
+	overflow:auto;
+	margin:25px 0
+}
+.markdown table th {
+	font-weight:700
+}
+.markdown table td,.markdown table th {
+	padding:6px 13px;
+	border:1px solid #ddd
+}
+.markdown table tr {
+	background-color:#fff;
+	border-top:1px solid #ccc
+}
+.markdown table tr:nth-child(2n) {
+	background-color:#f8f8f8
+}
+.markdown img {
+	max-width:100%
+}
+.markdown img:not(.emoji) {
+	border:1px solid #ddd;
+	max-width:95%;
+	box-shadow:0 0 30px #ccc;
+	-moz-box-shadow:0 0 30px #ccc;
+	-webkit-box-shadow:0 0 30px #ccc;
+	margin-bottom:30px;
+	margin-top:10px;
+	margin-left:2%
+}
+.markdown code {
+	margin:0;
+	color:#C2627B;
+	border-radius:3px;
+	background-color:#ECF0F1;
+	max-width:740px;
+	overflow-x:auto
+}
+.markdown code:after,.markdown code:before {
+	letter-spacing:-.2em;
+	content:"\00a0"
+}
+.markdown pre>code {
+	padding:0;
+	margin:0;
+	font-size:100%;
+	white-space:pre;
+	background:0 0;
+	border:0;
+	color:#E6E8D3
+}
+.markdown .highlight {
+	margin-bottom:16px
+}
+.markdown .highlight pre,.markdown pre {
+	padding:14px;
+	overflow:auto;
+	line-height:1.45;
+	background-color:#4e4e4e;
+	border-radius:3px;
+	color:#fff;
+	border:none
+}
+.markdown .highlight pre {
+	margin-bottom:0
+}
+.markdown pre {
+	word-wrap:normal
+}
+.markdown pre code {
+	padding:0;
+	margin:0;
+	overflow:initial;
+	line-height:inherit;
+	word-wrap:normal;
+	background-color:transparent;
+	border:0
+}
+.markdown pre code:after,.markdown pre code:before {
+	content:normal
+}

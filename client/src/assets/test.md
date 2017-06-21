@@ -21,10 +21,9 @@ npm run build --report
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 #edit history
-2.config/index.js dev.port 修改为8000  
-3.修改router  
-4.配置cssloader  
-5.配置favicon路径  
-6.8000是博客，8001是管理
+2.config/index.js dev.port 修改为8001
+3.修改router
+4.配置cssloader
+5.配置favicon路径
 
 图片：https://dribbble.com/colors/93C943
