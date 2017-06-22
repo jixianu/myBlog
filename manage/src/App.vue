@@ -1,12 +1,18 @@
 <template>
   <div id="app">
+    <nav-menu />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import navMenu from './components/nav-menu.vue'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+    navMenu
+  }
 }
 </script>
 

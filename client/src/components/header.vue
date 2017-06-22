@@ -77,7 +77,7 @@ export default {
 	  display: inline-block;
 	  margin-right: 20px;
 	  a {
-	  	color : #42b983;
+	  	color : #18bc9c;
 		}
 		a.hot {
 			color : #ED1C24;

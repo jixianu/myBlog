@@ -39,7 +39,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
-      }, 
+      },
       {
         test: /\.json$/,
         loader: 'json'
