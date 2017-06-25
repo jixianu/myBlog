@@ -6,7 +6,7 @@
         <li><router-link to='/detail'>Manage</router-link></li>
         <li><a href="https://github.com/jixianu">Github</a></li>
         <li><a href="http://weibo.com/u/1826413295">Weibo</a></li>
-        <li><router-link to='/aboutme'>Me</router-link></li>
+        <li><a href='https://about.me/wangxiaomeng'>Me</a></li>
       </ul>
       <div class="manbox"></div>
     </div>

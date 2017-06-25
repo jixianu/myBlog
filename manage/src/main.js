@@ -4,10 +4,11 @@ import App from './App'
 import router from './router'
 import store from './vuex/store.js'
 import ElementUI from 'element-ui'
+import VueHighcharts from 'vue-highcharts';
 
 import '../../static/style/reset.css'
 import './assets/style/index.css'
-import 'element-ui/lib/theme/index.css'
+import '../../static/style/element-vue/index.css'
 
 import { currency } from './filters/currency.js'
 
@@ -19,6 +20,7 @@ Vue.filter('currency', currency)
 
 // 使用插件
 Vue.use(ElementUI)
+Vue.use(VueHighcharts);
 
 // 构建实例
 new Vue({

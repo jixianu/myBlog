@@ -5,7 +5,15 @@
 </template>
 
 <script>
-
+export default {
+	name: 'footer',
+	data() {
+		return {}
+	},
+  created(){
+      
+  }
+}
 </script>
 
 <style scoped>
