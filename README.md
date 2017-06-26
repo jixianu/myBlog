@@ -27,7 +27,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 #edit history
 1.config/index.js dev.port 修改为8000  
 2.修改router  
-3.配置cssloader  
 4.配置favicon路径  
 5.8000-blog，8001-manage
 
@@ -35,11 +34,13 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 2.服务器开发
 3.数据库MongoDB开发
 4.vuex开发
-1.七牛图片上传
+1.等域名下来 备注七牛，研究图标上传
 5.网站数据来源
 6.如何获取登录人的资料
 7.第三方登录
-8.
+8.网站pv统计
+9.是否考虑做登录后留言功能
+
 
 #Built With
 - vue-highcharts 

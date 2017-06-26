@@ -5,7 +5,7 @@
         <router-link :to="{ path: '/post/add' }">
           <el-button type="primary" icon="edit">添加文章</el-button>
         </router-link>
-        <router-link :to="{ path: '/tag' }">
+        <router-link :to="{ path: '/tags' }">
           <el-button type="primary" icon="star-on">标签管理</el-button>
         </router-link>
         <router-link :to="{ path: '/category' }">
@@ -60,7 +60,7 @@
         sortable
         prop="date"
         label="日期"
-        width="140">
+        width="145">
         <div>
           <el-icon name="time"></el-icon>
           <span style="margin-left: 10px">{{ row.date}}</span>
@@ -289,6 +289,9 @@ export default {
 }
 .el-tag-custome {
   margin-right: 5px;
+}
+.el-icon-time {
+  color: #18bc9c;
 }
 .postToolBar {
   margin-bottom: 20px;

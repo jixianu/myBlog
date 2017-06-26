@@ -4,6 +4,7 @@ import Home from '@/pages/home'
 import Post from '@/pages/post'
 import PostAdd from '@/pages/post-add'
 import PostEditor from '@/pages/post-editor'
+import TagsCategories from '@/pages/tags-categories'
 import Data from '@/pages/data'
 import Log from '@/pages/log'
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/add',
       name: 'postAdd',
       component: PostAdd
+    },
+    {
+      path: '/tags',
+      name: 'tagsCategories',
+      component: TagsCategories
     },
     {
       path: '/data',

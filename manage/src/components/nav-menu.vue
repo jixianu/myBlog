@@ -9,8 +9,9 @@
     @select="handleSelect">
       <el-menu-item index="1" :route="{path: '/'}">首页</el-menu-item>
       <el-menu-item index="2" :route="{path: '/post'}">文章管理</el-menu-item>
-      <el-menu-item index="3" :route="{path: '/data'}">数据分析</el-menu-item>
-      <el-menu-item index="4" :route="{path: '/log'}">日志记录</el-menu-item>
+      <el-menu-item index="3" :route="{path: '/tags'}">标签管理</el-menu-item>
+      <el-menu-item index="4" :route="{path: '/data'}">数据分析</el-menu-item>
+      <el-menu-item index="5" :route="{path: '/log'}">日志记录</el-menu-item>
       <div class="el-menu-userinfo">
         <el-submenu index="5">
           <template slot="title" index="5-1">用户信息与用户名</template>
