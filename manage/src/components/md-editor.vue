@@ -14,7 +14,7 @@ export default {
       configs: {
         spellChecker: false, // 禁用拼写检查
         status: false, // 禁用底部状态栏
-        initialValue: 'editor', // 设置初始值
+        // initialValue: 'editor', // 设置初始值
         renderingConfig: {
           codeSyntaxHighlighting: true, // 开启代码高亮
           highlightingTheme: 'atom-one-light' // 自定义代码高亮主题，可选列表(https://github.com/isagalaev/highlight.js/tree/master/src/styles)
@@ -28,3 +28,14 @@ export default {
   }
 }
 </script>
+<style scoped>
+.post_content {
+  height: 500px;
+  overflow: auto;
+  font-size:  1.4rem;
+}
+.markdown-editor {
+  background-color: #FCFCFC;
+  margin: 0 25px; 
+}
+</style>

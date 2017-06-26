@@ -32,18 +32,16 @@ export const messages = Mock.mock({
   }]
 });
 
-export const correlations = Mock.mock({
-  'correlationList|5-8': [{
+export const posts = Mock.mock({
+  'postList|16': [{
     'id': '@natural',
     'title': '@ctitle(6,10)',
-    'name': '@name',
-    'url': Random.image('40x40', Random.color(), '#FFF', Random.word(3, 5))
+    'date': '@date',
+    'category': '@cword(1,3)',
+    'content': '@cparagraph',
+    'description': '@sentence(10,12)',
+    'tag': ['@word(3,6)','@word(3,4)','@word(3,4)','@word(3,4)'],
+    'delivery': 'false'
   }]
 });
 
-export const musicTop = Mock.mock({
-  'musicList|10':[{
-    'uniquekey' : '@natural',
-    'title': '@ctitle(3,6)'
-  }]
-})
