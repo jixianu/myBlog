@@ -28,26 +28,33 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 1.config/index.js dev.port 修改为8000  
 2.修改router  
 4.配置favicon路径  
-5.8000-blog，8001-manage
+5.8000-blog，8001-manage ， 8008 server
+6.全局安装koa-generator 生成server, koa2版本需要node7.6以上
+7.配置proxyTable代理
 
 #todList
-2.服务器开发
-3.数据库MongoDB开发
-4.vuex开发
-1.等域名下来 备注七牛，研究图标上传
-5.网站数据来源
-6.如何获取登录人的资料
-7.第三方登录
-8.网站pv统计
-9.是否考虑做登录后留言功能
+2.服务器开发 
+3.数据库MongoDB开发 
+4.vuex开发 
+1.等域名下来 备注七牛，研究图标上传 
+5.网站数据来源 
+6.如何获取登录人的资料 
+7.第三方登录 
+8.网站pv统计 
+9.是否考虑做登录后留言功能 
 
 
 #Built With
-- vue-highcharts 
-- Vue-simplemde markdown highlight 语法高亮
+- vue-highcharts  
+- vue-simplemde markdown highlight 语法高亮 
 - 
 
-#坑坑洼洼
-1.element自定义主题不带图标需要手动添加
+#坑坑洼洼 
+1.element自定义主题不带图标需要手动添加 
+2.koa 需要node>=7.6.0 支持async与await 
+
+
+#有关 
+http://www.jianshu.com/p/df464b26ae58 axios
 
 图片：https://dribbble.com/colors/93C943

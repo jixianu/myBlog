@@ -28,7 +28,6 @@
   </el-row>
 </template>
 
-
 <script>
   export default {
     name:'tag',
@@ -89,7 +88,7 @@
 .input-new-tag {
   width: 80px;
   padding: 0 5px;
-  height: 24px;
+  height: 22px;
   font-size: 12px;
   margin-bottom: 10px;
 }
