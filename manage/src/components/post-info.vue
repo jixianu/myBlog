@@ -14,7 +14,7 @@
     </el-row>
     <el-row :gutter="20" >
       <el-col :span="12">
-        <el-form-item label="选择分类" prop="category">
+        <el-form-item label="选择分类">
           <el-select v-model="handlePost.category" placeholder="请选择文章分类">
             <el-option 
             v-for="(category,index) in categories" 
@@ -105,9 +105,6 @@ export default {
           ],
           description: [
               { required: true, message: '请输入文章描述', trigger: 'blur' }
-          ],
-          category: [
-              { required: true, message: '请选择分类', trigger: 'change' }
           ]
       },
       state: '',
