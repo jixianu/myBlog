@@ -20,6 +20,17 @@ npm run md
 # build manage for production with minification
 npm run mb
 
+# connect mongoDB
+mongod --dbpath 数据库路径
+
+# run server at localhost:8008
+npm run sd
+
+# 数据库查询
+1.mongo 连接数据库
+2.show dbs 查看库列表
+3.use 库名
+4.db.skills.find() 查询所有，这里用复数
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
@@ -30,7 +41,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 4.配置favicon路径  
 5.8000-blog，8001-manage ， 8008 server
 6.全局安装koa-generator 生成server, koa2版本需要node7.6以上
-7.配置proxyTable代理
+7.配置proxyTable代理, /api 代理到8008服務器端口
 
 #todList
 2.服务器开发 
@@ -52,6 +63,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 #坑坑洼洼 
 1.element自定义主题不带图标需要手动添加 
 2.koa 需要node>=7.6.0 支持async与await 
+3.mongoose 存数据时类型验证不是很严格，不报错也不存储数据，在schemas存数据时需要细心
 
 
 #有关 
