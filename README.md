@@ -42,19 +42,19 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 5.8000-blog，8001-manage ， 8008 server
 6.全局安装koa-generator 生成server, koa2版本需要node7.6以上
 7.配置proxyTable代理, /api 代理到8008服務器端口
+8.修改chunkFilename 配置router按需加载
 
 #todList
 2.服务器开发 - post模型已出
 3.数据库MongoDB开发 - MongoDB模型已出
-4.vuex开发 
 1.等域名下来 备注七牛，研究图标上传 
-5.网站数据来源 
+10.jwt token 操作令牌 kov-blog中用了这个技术
+4.vuex开发 -> 整理方法 -> 
+5.网站統計数据来源 
 6.如何获取登录人的资料 
 7.第三方登录 
 8.网站pv统计 
 9.是否考虑做登录后留言功能 
-10.jwt token 操作令牌
-11.
 
 #Built With
 - vue-highcharts  

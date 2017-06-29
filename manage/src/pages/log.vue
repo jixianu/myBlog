@@ -7,6 +7,7 @@
 				<span>date: {{item.date}}</span>
 				<span>categories: {{item.categories}}</span>
 				<span v-for="tag,index in item.tags">{{tag}},</span>
+				<span>url: {{item.imgUrl}}</span>
 				<span>content: {{item.content}}</span>
 				<span>description: {{item.description}}</span>
 				<span>delivery: {{item.delivery}}</span>
@@ -28,7 +29,7 @@ export default {
     }
   },
   mounted(){
-		axios.get('/api/getAll')
+		axios.get('/api/post/getAll')
 		  .then(res=>{
 		    this.data = res.data
 		    this.loading = false

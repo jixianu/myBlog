@@ -6,7 +6,7 @@
 </template>
 <script>
 import mdEditor from '../components/md-editor.vue'
-import postInfo from '../components//post-info.vue'
+import postInfo from '../components/post-info.vue'
 import {getDate} from '../utils/date.js'
 
 export default {

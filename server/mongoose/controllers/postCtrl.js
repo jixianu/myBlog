@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
-import '../models/PostModel'
-const Post = mongoose.model('Post');
+import '../models/postModel'
+const Post = mongoose.model('Post')
 
 export function save(newPost) {
-  const post = new Post(newPost)
-  post.save(err=> {
+  const _post = new Post(newPost)
+  _post.save(err=> {
     if (err) {
       console.log(err)
     }
@@ -62,18 +62,16 @@ import mock from 'mockjs'
 
 var newPost1 = new Post(mock.mock({
   _id: uuid.v4(),
-  title: 123,
+  title: '@csentence(3,8)',
+  author: '@cname',
   date: '@date',
   categories: '@cword(1,5)',
   tags: ['@cword(1,5)','@cword(1,5)','@cword(1,5)'],
   content: '@paragraph',
   description: '@sentence(5)',
+  imgUrl: '@url',
   delivery: '@boolan'
 }))
 
 console.log(newPost1)
 newPost1.save();
-/*newPost2.save();
-newPost3.save();
-newPost4.save();
-newPost5.save();*/

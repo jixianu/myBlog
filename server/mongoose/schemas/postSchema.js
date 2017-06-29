@@ -1,14 +1,17 @@
 import mongoose from 'mongoose'
+import {updataMetaTime} from '../../middle'
 
 let PostSchema = new mongoose.Schema({
   _id: String,
   title: String,
+  author: String,
   date: Date,
   categories: String,
   tags: [],
   content: String,
   description: String,
   delivery: Boolean,
+  imgUrl: String,
   meta: {
     createAt: {
       type: Date,
@@ -21,21 +24,13 @@ let PostSchema = new mongoose.Schema({
   }
 })
 
-PostSchema.pre('save', function(next){
-  if (this.isNew) {
-    this.meta.createAt = this.meta.updateAt = Date.now()
-  }
-  else {
-    this.meta.updateAt = Date.now()
-  }
-  next()
-})
+PostSchema.pre('save', updataMetaTime)
 
 PostSchema.statics = {
   getAll: function (cb) {
     return this
       .find({})
-      .sort('updateAt')
+      .sort('meta.updateAt')
       .exec(cb)
   },
   getOne: function (id, cb) {
