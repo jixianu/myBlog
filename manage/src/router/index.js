@@ -27,7 +27,7 @@ export default new Router({
     path: '/log',
     component: resolve => require(['@/pages/log'], resolve)
   },{
-    path: 'login',
+    path: '/login',
     component: resolve => require(['@/pages/login'], resolve)
   }]
 })

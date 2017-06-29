@@ -13,10 +13,10 @@
       <el-menu-item index="4" :route="{path: '/data'}">数据分析</el-menu-item>
       <el-menu-item index="5" :route="{path: '/log'}">日志记录</el-menu-item>
       <div class="el-menu-userinfo">
-        <el-submenu index="5">
-          <template slot="title" index="5-1">用户信息与用户名</template>
-          <el-menu-item index="5-2">设置</el-menu-item>
-          <el-menu-item index="5-3" @click.native="logout">退出</el-menu-item>
+        <el-submenu index="6">
+          <template slot="title" index="6-1">用户信息与用户名</template>
+          <el-menu-item index="6-2"  :route="{path: '/login'}">登录</el-menu-item>
+          <el-menu-item index="6-3" @click.native="logout">退出</el-menu-item>
         </el-submenu>
       </div>
     </el-menu>
