@@ -47,7 +47,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 #todList
 2.服务器开发 - post模型已出
 3.数据库MongoDB开发 - MongoDB模型已出
-1.等域名下来 备注七牛，研究图标上传 
+1.等域名下来 备注七牛，研究图标上传  http://blog.csdn.net/lupeng0206/article/details/71175767
 10.jwt token 操作令牌 kov-blog中用了这个技术
 4.vuex开发 -> 整理方法 -> 
 5.网站統計数据来源 

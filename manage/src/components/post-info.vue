@@ -57,13 +57,14 @@
       </el-col>
     </el-row>
     <el-row v-if="judgeNewAdd">
-      <el-form-item label="文章图片" prop="images">
+      <el-col :span="12">
+        <el-form-item label="预览图片" prop="images">
         <el-upload 
-        action="https://jsonplaceholder.typicode.com/posts/" 
+        action="http://blog.create.jixianu.cn/" 
         ref="upload"
         list-type="picture-card"
         multiple
-        :auto-upload="false"
+        :auto-upload="true"
         :on-preview="handlePictureCardPreview" 
         :on-remove="handleRemove">
           <i class="el-icon-plus"></i>
@@ -72,6 +73,25 @@
           <img width="100%" :src="dialogImageUrl" alt="">
         </el-dialog>
       </el-form-item>
+      </el-col>
+      <el-col :span="12">
+        <el-form-item label="文章图片" prop="images">
+        <el-upload 
+        action="https://jsonplaceholder.typicode.com/posts/" 
+        ref="upload"
+        list-type="picture-card"
+        multiple
+        :auto-upload="false"
+        :on-preview="handlePictureCardPreview" 
+        :on-remove="handleRemove"
+        :on-success="handleAvatarSuccess">
+          <i class="el-icon-plus"></i>
+        </el-upload>
+        <el-dialog v-model="dialogVisible" size="tiny">
+          <img width="100%" :src="dialogImageUrl" alt="">
+        </el-dialog>
+      </el-form-item>
+      </el-col>
     </el-row>
     <el-form-item class="btnBox">
         <el-button type="primary" @click="onSubmit">保存</el-button>
@@ -136,6 +156,9 @@ export default {
       },
       handleClose(tag) {
           // this.form.tag.splice(this.form.tag.indexOf(tag), 1)
+      },
+      handleAvatarSuccess(res, file) {
+        console.log(res, file);
       },
       onSubmit() {
         this.$refs.upload.submit();
