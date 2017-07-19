@@ -10,13 +10,14 @@
       <el-menu-item index="1" :route="{path: '/'}">首页</el-menu-item>
       <el-menu-item index="2" :route="{path: '/post'}">文章管理</el-menu-item>
       <el-menu-item index="3" :route="{path: '/tags'}">标签管理</el-menu-item>
-      <el-menu-item index="4" :route="{path: '/data'}">数据分析</el-menu-item>
-      <el-menu-item index="5" :route="{path: '/log'}">日志记录</el-menu-item>
+      <el-menu-item index="4" :route="{path: '/categories'}">分类管理</el-menu-item>
+      <el-menu-item index="5" :route="{path: '/data'}">数据分析</el-menu-item>
+      <el-menu-item index="6" :route="{path: '/log'}">日志记录</el-menu-item>
       <div class="el-menu-userinfo">
-        <el-submenu index="6">
+        <el-submenu index="7">
           <template slot="title" index="6-1">用户信息与用户名</template>
-          <el-menu-item index="6-2"  :route="{path: '/login'}">登录</el-menu-item>
-          <el-menu-item index="6-3" @click.native="logout">退出</el-menu-item>
+          <el-menu-item index="7-2"  :route="{path: '/login'}">登录</el-menu-item>
+          <el-menu-item index="7-3" @click.native="logout">退出</el-menu-item>
         </el-submenu>
       </div>
     </el-menu>

@@ -66,8 +66,8 @@
 <style scoped>
 .title {
   font-size: 1.6rem;
-  background-color: #F1E05A;
-  color: #696653;
+  background-color: #4BCD61;
+  color: #ffffff;
   width:  80px;
   text-align: center;
   padding:  8px 5px;

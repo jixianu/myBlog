@@ -59,32 +59,28 @@
     <el-row v-if="judgeNewAdd">
       <el-col :span="12">
         <el-form-item label="预览图片" prop="images">
-        <el-upload 
-        action="http://blog.create.jixianu.cn/" 
-        ref="upload"
-        list-type="picture-card"
-        multiple
-        :auto-upload="true"
-        :on-preview="handlePictureCardPreview" 
-        :on-remove="handleRemove">
-          <i class="el-icon-plus"></i>
+          <el-upload
+          action="https://jsonplaceholder.typicode.com/posts/"
+          list-type="picture-card"
+          :show-file-list="false"
+          :on-success="handleAvatarSuccess"
+          :before-upload="beforeAvatarUpload">
+          <img v-if="form.imgUrl" :src="form.imgUrl" class="avatar">
+          <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
-        <el-dialog v-model="dialogVisible" size="tiny">
-          <img width="100%" :src="dialogImageUrl" alt="">
-        </el-dialog>
       </el-form-item>
       </el-col>
       <el-col :span="12">
         <el-form-item label="文章图片" prop="images">
         <el-upload 
-        action="https://jsonplaceholder.typicode.com/posts/" 
-        ref="upload"
-        list-type="picture-card"
-        multiple
-        :auto-upload="false"
-        :on-preview="handlePictureCardPreview" 
-        :on-remove="handleRemove"
-        :on-success="handleAvatarSuccess">
+          action="https://jsonplaceholder.typicode.com/posts/" 
+          ref="upload"
+          list-type="picture-card"
+          multiple
+          :auto-upload="false"
+          :on-preview="handlePictureCardPreview" 
+          :on-remove="handleRemove"
+          :on-success="handleAvatarSuccess">
           <i class="el-icon-plus"></i>
         </el-upload>
         <el-dialog v-model="dialogVisible" size="tiny">
@@ -117,7 +113,8 @@ export default {
         tag: [],
         delivery: false,
         author: 'xiaomeng',
-        images:[]
+        images:[],
+        imgUrl:''
       },
       rules: {
           title: [
@@ -157,8 +154,11 @@ export default {
       handleClose(tag) {
           // this.form.tag.splice(this.form.tag.indexOf(tag), 1)
       },
+      beforeAvatarUpload(file){
+
+      },
       handleAvatarSuccess(res, file) {
-        console.log(res, file);
+        this.form.imgUrl = URL.createObjectURL(file.raw);
       },
       onSubmit() {
         this.$refs.upload.submit();
@@ -206,5 +206,9 @@ export default {
 .btnBox {
   text-align: center;
   padding-top: 20px;
+}
+.avatar {
+  width: 100%;
+  height: 100%;
 }
 </style>

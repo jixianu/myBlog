@@ -1,7 +1,6 @@
 <template>
 <div class="container">
   <tag title="所有标签" :dataList="dynamicTags"></tag>
-  <tag title="所有分类" :dataList="categories"></tag>
 </div>
 </template>
 <script>
@@ -10,7 +9,6 @@ export default {
   data() {
     return {
       dynamicTags: ['标签一', '标签二', '标签三'],
-      categories :['前端技术','后端技术','UI技术'],
     };
   },
   components: {
