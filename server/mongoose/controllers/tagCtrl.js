@@ -4,30 +4,19 @@ const Tag = mongoose.model('Tag')
 
 export function save(newTag) {
   const _tag = new Tag(newTag)
-  _tag.save(err=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log('已保存')
-  })
+  _tag.save()
 }
 
 export function getAll() {
-  return Tag.getAll((err, Tag)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Tag)
-  })
+  return Tag.getAll()
 }
 
 export function remove(id) {
-  return Tag.removeById(id, (err, Tag)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Tag)
-  })
+  return Tag.removeById(id)
+}
+
+export function update(id, update) {
+  return Tag.updateById(id, update)
 }
 
 import uuid from 'uuid'

@@ -4,57 +4,27 @@ const Post = mongoose.model('Post')
 
 export function save(newPost) {
   const _post = new Post(newPost)
-  _post.save(err=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log('已保存')
-  })
+  _post.save()
 }
 
 export function getAll() {
-  return Post.getAll((err, Post)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Post)
-  })
+  return Post.getAll()
 }
 
 export function getOne(id) {
-  return Post.getOne(id, (err, Post)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Post)
-  })
+  return Post.getOne(id)
 }
 
 export function update(id, update) {
-  return Post.updateById(id, update, (err, Post)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Post)
-  })
+  return Post.updateById(id, update)
 }
 
 export function remove(id) {
-  return Post.removeById(id, (err, Post)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Post)
-  })
+  return Post.removeById(id)
 }
 
 export function search(key) {
-  return Post.findByKey(key, (err, Post)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Post)
-  })
+  return Post.findByKey(key)
 }
 
 import uuid from 'uuid'

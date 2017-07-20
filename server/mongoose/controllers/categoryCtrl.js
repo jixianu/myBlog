@@ -4,32 +4,20 @@ const Category = mongoose.model('Category')
 
 export function save(newCategory) {
   const _category = new Category(newCategory)
-  _category.save(err=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log('已保存')
-  })
+  _category.save()
 }
 
 export function getAll() {
-  return Category.getAll((err, Category)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Category)
-  })
+  return Category.getAll()
 }
 
 export function remove(id) {
-  return Category.removeById(id, (err, Category)=> {
-    if (err) {
-      console.log(err)
-    }
-    console.log(Category)
-  })
+  return Category.removeById(id)
 }
 
+export function update(id, update) {
+  return Category.updateById(id, update)
+}
 import uuid from 'uuid'
 import mock from 'mockjs'
 
