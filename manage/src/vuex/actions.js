@@ -1,4 +1,5 @@
 import * as types from './mutation-types'
+import * as api from '../api/api.js'
 
 export const addToCart = ({ commit }, product) => {
   if (product.inventory > 0) {
