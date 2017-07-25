@@ -7,14 +7,9 @@
 </template>
 
 <script>
-// import navMenu from './components/nav-menu.vue'
-// import manageFooter from './components/footer.vue'
-
 export default {
   name: 'app',
   components:{
-    // navMenu,
-    // manageFooter
   }
 }
 </script>

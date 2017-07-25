@@ -4,7 +4,7 @@ function parseResponse(response) {
 }
 // 检测状态
 function checkStatus([status, statusText, data]) {
-  if (status > 200 && status < 300) {
+  if (status >= 200 && status < 300) {
     return data
   } else {
     if (401 === status) {
@@ -24,10 +24,10 @@ export default {
   get(url, param = {}, header = {}, host = process.env.api) {
     let reqHeaders = new Headers(header)
     reqHeaders.append('Accept', 'application/json')
-    if (null !== store.state.token.token) {
+    /*if (null !== store.state.token.token) {
       // 推特使用的Bearer
       reqHeaders.append('Authorization', 'Bearer ' + store.state.token.token)
-    }
+    }*/
     let query = []
     Object.keys(param).forEach((item) => {
       query.push(`${item}=${encodeURLComponent(param[item])}`)
@@ -47,15 +47,86 @@ export default {
       .then(checkStatus)
   },
   post(url, param = {}, header = {}, host = process.env.api) {
+	 	let reqHeaders = new Headers(headers)
+    reqHeaders.append('Content-Type', 'application/json')
+    reqHeaders.append('Accept', 'application/json')
+    /*if(null !== store.state.token.token){
+      reqHeaders.append('Authorization','Bearer '+store.state.token.token)
+    }*/
+    url = host + url
 
+    var init = {
+      method: 'POST',
+      headers: reqHeaders,
+      credentials:"include",
+      mode:'cors',
+      body: JSON.stringify(param)
+    }
+
+    return fetch(url, init)
+      .then(parseResponse)
+      .then(checkStatus)
   },
   put(url, param = {}, header = {}, host = process.env.api) {
+		let reqHeaders = new Headers(headers)
+    reqHeaders.append('Content-Type', 'application/json')
+    reqHeaders.append('Accept', 'application/json')
+    /*if(null !== store.state.token.token){
+      reqHeaders.append('Authorization','Bearer '+store.state.token.token)
+    }*/
+    url = host + url
 
+    var init = {
+      method: 'POST',
+      headers: reqHeaders,
+      credentials:"include",
+      mode:'cors',
+      body: JSON.stringify(param)
+    }
+
+    return fetch(url, init)
+      .then(parseResponse)
+      .then(checkStatus)
   },
   patch(url, param = {}, header = {}, host = process.env.api) {
+		let reqHeaders = new Headers(headers)
+    reqHeaders.append('Content-Type', 'application/json')
+    reqHeaders.append('Accept', 'application/json')
+    /*if(null !== store.state.token.token){
+      reqHeaders.append('Authorization','Bearer '+store.state.token.token)
+    }*/
+    url = host + url
 
+    var init = {
+      method: 'POST',
+      headers: reqHeaders,
+      credentials:"include",
+      mode:'cors',
+      body: JSON.stringify(param)
+    }
+
+    return fetch(url, init)
+      .then(parseResponse)
+      .then(checkStatus)
   },
   delete(url, param = {}, header = {}, host = process.env.api) {
+		let reqHeaders = new Headers(headers)
+    reqHeaders.append('Content-Type', 'application/json')
+    reqHeaders.append('Accept', 'application/json')
+    /*if(null !== store.state.token.token){
+      reqHeaders.append('Authorization','Bearer '+store.state.token.token)
+    }*/
+    url = host + url
 
+    var init = {
+      method: 'DELETE',
+      headers: reqHeaders,
+      credentials:"include",
+      mode:'cors'
+    }
+
+    return fetch(url, init)
+      .then(parseResponse)
+      .then(checkStatus)
   }
 }

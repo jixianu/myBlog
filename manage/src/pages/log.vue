@@ -1,8 +1,9 @@
 <template>
 	<div class="container">
 		<h1>log</h1>
+		<el-button type="primary" onClick="getAllPosts()">默认按钮</el-button>
 		<ul v-loading="loading">
-			<li v-for="item in data">
+			<li v-for="item in allPosts">
 				<span>_id: {{item._id}}</span>
 				<span>date: {{item.date}}</span>
 				<span>categories: {{item.categories}}</span>
@@ -18,25 +19,38 @@
 	</div>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import { mapActions } from 'vuex'
 export default {
 	name: 'log',
 	props: {},
   data() {
     return {
     	loading: true,
-    	data: null
+    }
+  },
+  computed: {
+    allPosts () {
+      return this.$store.state.post.all
     }
   },
   mounted(){
-		axios.get('/api/post/getAll')
+		/*axios.get('/api/post/getAll')
 		  .then(res=>{
 		    this.data = res.data
 		    this.loading = false
 		  })
 		  .catch(function(err){
 		    console.log(err);
-		  });
+		  });*/
+		this.getAllPosts().then(()=>{
+			this.loading = false
+		}).catch(err=>console.log(err))
+  },
+  methods: {
+  	...mapActions('post',[
+    	'getAllPosts'
+  	])
   }
 }
 </script>
