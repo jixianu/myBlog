@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import loginApi from '../api/login'
 import md5 from 'md5'
 
@@ -48,20 +49,27 @@ export default {
       that.$refs[formName].validate(valid => {
         if (valid) {
           // localStorage.setItem('ms_username',self.ruleForm.username);
-            loginApi.checkLogin(that.ruleForm.username, md5(that.ruleForm.password).toUpperCase())
+            // loginApi.checkLogin(that.ruleForm.username, md5(that.ruleForm.password).toUpperCase())
             /*.then(res=> {
               console.log(res)
               // that.$router.push('/home')
-            })*/
+            })
             .catch (err => {
               console.log(err)
+            })*/
+            that.createToken({
+              name: that.ruleForm.username, 
+              password: md5(that.ruleForm.password).toUpperCase()
             })
         } else {
           console.log('error submit!!')
           return false;
         }
       });
-    }
+    },
+    ...mapActions('token',[
+      'createToken'
+    ])
   }
 }
 </script>

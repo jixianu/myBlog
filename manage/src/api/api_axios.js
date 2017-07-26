@@ -4,7 +4,7 @@ import * as types from '../vuex/mutation-types'
 import router from '../router'
 
 // axios 配置
-axios.defaults.timeout = 10000
+axios.defaults.timeout = 5000
 axios.defaults.baseURL = process.env.api
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 axios.defaults.headers.put['Content-Type'] = 'application/json'
