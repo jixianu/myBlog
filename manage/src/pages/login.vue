@@ -12,45 +12,58 @@
         <div class="login-btn">
           <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
         </div>
-        <p style="font-size:12px;line-height:30px;color:#999;">第三方登录: 还没有做</p>
+        <!-- <p style="font-size:12px;line-height:30px;color:#999;">第三方登录: 还没有做</p> -->
+        <p v-show="isLoginErr" :text="errMessage"></p>
       </el-form>
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    data: function(){
-      return {
-        ruleForm: {
-          username: '',
-          password: ''
-        },
-        rules: {
-          username: [
-            { required: true, message: '请输入用户名', trigger: 'blur' }
-          ],
-          password: [
-            { required: true, message: '请输入密码', trigger: 'blur' }
-          ]
+import loginApi from '../api/login'
+import md5 from 'md5'
+
+export default {
+  data: function(){
+    return {
+      ruleForm: {
+        username: '',
+        password: ''
+      },
+      rules: {
+        username: [
+          { required: true, message: '请输入用户名', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' }
+        ]
+      },
+      isLoginErr: false,
+      errMessage: ''
+    }
+  },
+  methods: {
+    submitForm(formName) {
+      const that = this;
+      that.$refs[formName].validate(valid => {
+        if (valid) {
+          // localStorage.setItem('ms_username',self.ruleForm.username);
+            loginApi.checkLogin(that.ruleForm.username, md5(that.ruleForm.password).toUpperCase())
+            /*.then(res=> {
+              console.log(res)
+              // that.$router.push('/home')
+            })*/
+            .catch (err => {
+              console.log(err)
+            })
+        } else {
+          console.log('error submit!!')
+          return false;
         }
-      }
-    },
-    methods: {
-      submitForm(formName) {
-        const self = this;
-        self.$refs[formName].validate((valid) => {
-          if (valid) {
-            // localStorage.setItem('ms_username',self.ruleForm.username);
-            self.$router.push('/home');
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      }
+      });
     }
   }
+}
 </script>
 
 <style scoped>
@@ -66,7 +79,7 @@
   margin-top: -230px;
   text-align: center;
   font-size:30px;
-  color: #fff;
+  color: #18bc9c;
 }
 .ms-login{
   position: absolute;

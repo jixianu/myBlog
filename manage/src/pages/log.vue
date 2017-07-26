@@ -1,7 +1,6 @@
 <template>
 	<div class="container">
 		<h1>log</h1>
-		<el-button type="primary" onClick="getAllPosts()">默认按钮</el-button>
 		<ul v-loading="loading">
 			<li v-for="item in allPosts">
 				<span>_id: {{item._id}}</span>
@@ -15,11 +14,9 @@
 				<hr>
 			</li>
 		</ul>
-		<!-- <el-button type="primary" @click="getJSON()">点击获取数据</el-button> -->
 	</div>
 </template>
 <script>
-// import axios from 'axios'
 import { mapActions } from 'vuex'
 export default {
 	name: 'log',

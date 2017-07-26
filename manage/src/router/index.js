@@ -32,12 +32,12 @@ export default new Router({
       },{
         path: '/log',
         component: resolve => require(['@/pages/log'], resolve)
-      },{
-        path: '*',
-        component: resolve => require(['@/pages/home'], resolve)
       }]
     },{
     path: '/login',
     component: resolve => require(['@/pages/login'], resolve)
+  },{
+    path: '*',
+    component: resolve => require(['@/pages/home'], resolve)
   }]
 })

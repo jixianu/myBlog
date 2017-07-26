@@ -1,4 +1,5 @@
-import api from './api.js'
+// import api from './api'
+import api from './api_axios'
 
 export default {
 	getAll(){

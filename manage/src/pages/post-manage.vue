@@ -156,7 +156,7 @@ export default {
       pageConfig: {
         currentPage: 1,
         pageSize: 10,
-        totle: 10
+        total: 50
       }
     }
   },

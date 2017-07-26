@@ -68,7 +68,8 @@ mongoDB 多表查询
 #坑坑洼洼 
 1.element自定义主题不带图标需要手动添加 
 2.koa 需要node>=7.6.0 支持async与await 
-3.mongoose 存数据时类型验证不是很严格，不报错也不存储数据，在schemas存数据时需要细心
+3.mongoose 存数据时类型验证不是很严格，不报错也不存储数据，在schemas存数据时需要细心  
+4.管理页接口想用async/await 但由于嵌套太多，需要写很多async/await，其实已经实现了，但还是改成了axios().then()
 
 
 #有关 

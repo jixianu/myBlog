@@ -8,7 +8,7 @@ const state = {
 // actions
 const actions = {
   getAllPosts ({ commit }) {
-    post.getAll().then(posts => {
+    post.getAll().then( posts => {
       commit(types.RECEIVE_POSTS, { posts })
     })
   }

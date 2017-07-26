@@ -34,7 +34,6 @@ TagSchema.statics = {
         if(err.name === 'CastError'){
           this.throw(400,'id不存在');
         }else{
-          utils.logger.error(err);
           this.throw(500,'内部错误')
         }
       })
@@ -47,7 +46,6 @@ TagSchema.statics = {
         if(err.name === 'CastError'){
           this.throw(400,'id不存在');
         }else{
-          utils.logger.error(err);
           this.throw(500,'内部错误')
         }
       })
