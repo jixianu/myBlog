@@ -1,8 +1,8 @@
-const router = require('koa-router')()
-const Category = require('../mongoose/controllers/categoryCtrl.js')
+import koaRouter from 'koa-router'
+import * as Category from '../mongoose/controllers/categoryCtrl.js'
 
+const router = koaRouter()
 router.prefix('/api/category')
-
 
 // ------ 分类 ------
 // 获取所有
@@ -26,4 +26,4 @@ router.post('/add', async (ctx, next) =>{
  	ctx.body = await Category.save(newCategory)
 })
 
-module.exports = router
+export default router

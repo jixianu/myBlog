@@ -32,17 +32,9 @@ export default {
     }
   },
   mounted(){
-		/*axios.get('/api/post/getAll')
-		  .then(res=>{
-		    this.data = res.data
-		    this.loading = false
-		  })
-		  .catch(function(err){
-		    console.log(err);
-		  });*/
 		this.getAllPosts().then(()=>{
 			this.loading = false
-		}).catch(err=>console.log(err))
+		})
   },
   methods: {
   	...mapActions('post',[

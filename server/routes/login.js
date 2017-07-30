@@ -1,34 +1,17 @@
-const router = require('koa-router')()
-const User = require('../mongoose/controllers/userCtrl.js')
-const md5 = require('md5')
-const uuid = require('uuid')
-const jwt = require('jsonwebtoken')
-const config = require('../config')
+import koaRouter from 'koa-router'
+import * as User from '../mongoose/controllers/userCtrl.js'
+
+import md5  from 'md5'
+import uuid  from 'uuid'
+import jwt  from 'jsonwebtoken'
+import config  from '../config'
+import {setAdmin} from '../middle'
 const cert = config.jwt.cert;
+
+const router = koaRouter()
 router.prefix('/api/login')
 
-/*router.post('/', async (ctx, next) => {
-  ctx.body = {
-    uid: 'user._id'
-  }
-})*/
 router.post('/', setAdmin , createToken)
-
-async function setAdmin(ctx, next){
-  // 这里在表里查询用户
-  const user = await User.getAll()
-
-  if (user.length <=0 ) {
-    const new_user = {
-      _id: uuid.v4(),
-      name: 'admin',
-      password:md5('password').toUpperCase()
-    }
-    User.save(new_user)
-  }
-
-  await next()
-}
 
 async function createToken(ctx, next){
   const _name = ctx.request.body.username
@@ -41,7 +24,7 @@ async function createToken(ctx, next){
       const token = jwt.sign({
         uid: user._id,
         name: user.name,
-        exp: Math.floor(Date.now()/1000) + 24 * 60 * 60//1 hours
+        exp: Math.floor(Date.now()/1000) + 24 * 60 * 60 // 1 hours
       },cert);
       ctx.body =  {
         success: true,
@@ -74,4 +57,4 @@ async function createToken(ctx, next){
   await next()
 }
 
-module.exports = router
+export default router

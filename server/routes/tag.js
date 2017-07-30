@@ -1,6 +1,6 @@
-const router = require('koa-router')()
-const Tag = require('../mongoose/controllers/tagCtrl.js')
-
+import koaRouter from 'koa-router'
+import * as Tag from '../mongoose/controllers/tagCtrl.js'
+const router = koaRouter()
 router.prefix('/api/tag')
 
 // ------ 标签 ------
@@ -25,4 +25,4 @@ router.post('/add', async (ctx, next) =>{
  	ctx.body = await Tag.save(newTag)
 })
 
-module.exports = router
+export default router

@@ -13,8 +13,8 @@ axios.defaults.headers.patch['Content-Type'] = 'application/json'
 // http request 拦截器
 axios.interceptors.request.use(
     config => {
-      if (store.state.token) {// 判断是否存在token，如果存在的话，则每个http header都加上token
-        config.headers.Authorization = `token ${store.state.token}`
+      if (store.state.user) {// 判断是否存在token，如果存在的话，则每个http header都加上token
+        config.headers.Authorization = `token ${store.state.user.token}`
       }
       return config;
     },
@@ -51,9 +51,6 @@ export default {
       params: param
     })
     .then(res => res.data)
-    .catch(err => {
-      console.log(err);
-    });
   },
   post(url, param = {}){
     return axios({
@@ -62,9 +59,6 @@ export default {
       data: param
     })
     .then(res => res.data)
-    .catch(err => {
-      console.log(err);
-    });
   },
   put(url, param = {}){
     return axios({
@@ -73,9 +67,6 @@ export default {
       data: param
     })
     .then(res => res.data)
-    .catch(err => {
-      console.log(err);
-    });
   },
   patch(url, param = {}){
     return axios({
@@ -84,9 +75,6 @@ export default {
       data: param
     })
     .then(res => res.data)
-    .catch(err => {
-      console.log(err);
-    });
   },
   delete(url, param = {}){
     return axios({
@@ -95,8 +83,5 @@ export default {
       data: param
     })
     .then(res => res.data)
-    .catch(err => {
-      console.log(err);
-    });
   }
 }

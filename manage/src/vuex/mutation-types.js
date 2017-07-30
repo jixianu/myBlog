@@ -8,3 +8,6 @@ export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 
 export const RECEIVE_TOKEN = 'RECEIVE_TOKEN'
 export const DELETE_TOKEN = 'DELETE_TOKEN'
+
+export const LOGIN = 'LOGIN'
+export const LOGOUT = 'LOGOUT'

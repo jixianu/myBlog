@@ -70,6 +70,7 @@ mongoDB 多表查询
 2.koa 需要node>=7.6.0 支持async与await 
 3.mongoose 存数据时类型验证不是很严格，不报错也不存储数据，在schemas存数据时需要细心  
 4.管理页接口想用async/await 但由于嵌套太多，需要写很多async/await，其实已经实现了，但还是改成了axios().then()
+5.token生成应该是login中的操作，但为了理解token原理，把token从login中抽离
 
 
 #有关 

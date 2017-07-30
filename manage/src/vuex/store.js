@@ -5,7 +5,7 @@ import * as getters from './getters'*/
 /*import cart from './modules/cart.js'
 import products from './modules/product'*/
 import post from './modules/post'
-import token from './modules/token'
+import user from './modules/user'
 /*import tag from './modules/tag'
 import category from './modules/category'
 import token from './modules/token'*/
@@ -23,7 +23,7 @@ export default new Vuex.Store({
     /*cart,
     products*/
     post,
-    token
+    user
     /*
     tag,
 		category,

@@ -2,11 +2,11 @@
   <div id="nav-menu">
   <!-- 默认的第一个得根据路由参数 -->
     <el-menu 
-    default-active="1" 
-    :router="true" 
+    :default-active="active" 
     class="el-menu-nav container"
     mode="horizontal" 
-    @select="handleSelect">
+    :router="true" 
+    >
       <el-menu-item index="1" :route="{path: '/'}">首页</el-menu-item>
       <el-menu-item index="2" :route="{path: '/post'}">文章管理</el-menu-item>
       <el-menu-item index="3" :route="{path: '/tags'}">标签管理</el-menu-item>
@@ -15,9 +15,10 @@
       <el-menu-item index="6" :route="{path: '/log'}">日志记录</el-menu-item>
       <div class="el-menu-userinfo">
         <el-submenu index="7">
-          <template slot="title" index="6-1">用户信息与用户名</template>
-          <el-menu-item index="7-2"  :route="{path: '/login'}">登录</el-menu-item>
-          <el-menu-item index="7-3" @click.native="logout">退出</el-menu-item>
+          <template slot="title" index="7-1" v-if="user.username != ''">{{user.username}}</template>
+          <template slot="title" index="7-1" v-else>尚未登录</template>
+          <el-menu-item index="7-2" @click="login">登录</el-menu-item>
+          <el-menu-item index="7-3" @click="logout">退出</el-menu-item>
         </el-submenu>
       </div>
     </el-menu>
@@ -25,21 +26,21 @@
 </template>
 
 <script>
+  import {mapActions, mapState} from 'vuex'
   export default {
-    methods: {
-      logout() {
-        /*this.$api.get_user_logout().then(res => {
-          this.$message({
-              type: 'success',
-              message: '已退出'
-          })
-          this.$store.dispatch('setUser', null)
-          this.$router.push({name: 'login'})
-        })*/
-      },
-      handleSelect(key, keyPath) {
-        
+    computed: mapState({
+      user: state => state.user,
+      active(){
+        return '2'
       }
+    }),
+    methods: {
+      login(){
+        this.$router.push({path: '/login'})
+      },
+      ...mapActions('user',[
+        'logout'
+      ])
     }
   }
 </script>
@@ -59,5 +60,9 @@
   }
   .el-menu-userinfo {
     float: right;
+    padding-right:  15px;
+  }
+  .el-menu-item {
+    text-align: center;
   }
 </style>

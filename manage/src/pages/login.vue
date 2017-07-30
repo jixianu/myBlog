@@ -52,13 +52,13 @@ export default {
               name: this.ruleForm.username, 
               password: md5(this.ruleForm.password).toUpperCase()
             }).then(res => {
-              // debugger
               if (res.success) {
                 const query = this.$route.query.redirect;
+                this.login(res.data)
                 if ( query ) {
                   this.$router.push(`${query}`)   // 返回上一页
                 } else {
-                  this.$router.push('/home')  // 返回首页
+                  this.$router.go(-1) // 返回上一页
                 }
               } else {
                 this.isLoginErr = true
@@ -71,8 +71,9 @@ export default {
         }
       });
     },
-    ...mapActions('token',[
-      'createToken'
+    ...mapActions('user',[
+      'createToken',
+      'login'
     ])
   }
 }

@@ -1,19 +1,22 @@
-const Koa = require('koa')
-const app = new Koa()
-const views = require('koa-views')
-const json = require('koa-json')
-const onerror = require('koa-onerror')
-const bodyparser = require('koa-bodyparser')
-const logger = require('koa-logger')
+import Koa from 'koa'
+import views from 'koa-views'
+import json from 'koa-json'
+import onerror from 'koa-onerror'
+import bodyparser from 'koa-bodyparser'
+import logger from 'koa-logger'
+import post from './routes/post'
+import tag from './routes/tag'
+import category from './routes/category'
+import login from './routes/login'
 
-const post = require('./routes/post')
-const tag = require('./routes/tag')
-const category = require('./routes/category')
-const login = require('./routes/login')
+const app = new Koa()
 
 // error handler
 onerror(app)
 
+app.on('error', function(err,ctx){
+	console.log(err);
+});   
 // middlewares
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
@@ -41,4 +44,4 @@ app.use(category.routes(), category.allowedMethods())
 app.use(login.routes(), login.allowedMethods())
 
 
-module.exports = app
+module.exports =  app

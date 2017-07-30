@@ -47,7 +47,7 @@ export default {
       .then(checkStatus)
   },
   post(url, param = {}, header = {}, host = process.env.api) {
-	 	let reqHeaders = new Headers(headers)
+    let reqHeaders = new Headers(headers)
     reqHeaders.append('Content-Type', 'application/json')
     reqHeaders.append('Accept', 'application/json')
     /*if(null !== store.state.token.token){

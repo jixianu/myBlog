@@ -1,6 +1,7 @@
-const router = require('koa-router')()
-const Post = require('../mongoose/controllers/postCtrl.js')
-
+import koaRouter from 'koa-router'
+import * as Post from '../mongoose/controllers/postCtrl.js'
+import {verifyToken} from '../middle'
+const router = koaRouter()
 
 router.prefix('/api/post')
 // ctx.body 是输出的，不是读取的，ctx.body = 'hi, egg';
@@ -10,7 +11,7 @@ router.prefix('/api/post')
 
 // ------ 文章 ------
 // 获取所有
-router.get('/getAll', async (ctx, next) =>{
+router.get('/getAll', verifyToken, async (ctx, next) =>{
   ctx.body = await Post.getAll()
 })
 // 根据id查找
@@ -35,4 +36,4 @@ router.post('/add', async (ctx, next) =>{
   ctx.body = await Post.save(newPost)
 })
 
-module.exports = router
+export default router
