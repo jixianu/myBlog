@@ -19,7 +19,10 @@ export default new Router({
         component: resolve => require(['@/pages/post-editor'], resolve)
       },{
         path: '/add',
-        component: resolve => require(['@/pages/post-add'], resolve)
+        component: resolve => require(['@/pages/post-add'], resolve),
+        meta: {
+          requireAuth: true  // 添加该字段，表示进入这个路由是需要登录的
+        }
       },{
         path: '/tags',
         component: resolve => require(['@/pages/tags'], resolve)

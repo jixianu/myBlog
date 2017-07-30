@@ -13,7 +13,7 @@
           <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
         </div>
         <!-- <p style="font-size:12px;line-height:30px;color:#999;">第三方登录: 还没有做</p> -->
-        <p v-show="isLoginErr" :text="errMessage"></p>
+        <p v-show="isLoginErr">{{errMessage}}</p>
       </el-form>
     </div>
   </div>
@@ -45,21 +45,25 @@ export default {
   },
   methods: {
     submitForm(formName) {
-      const that = this;
-      that.$refs[formName].validate(valid => {
+      this.$refs[formName].validate(valid => {
         if (valid) {
-          // localStorage.setItem('ms_username',self.ruleForm.username);
-            // loginApi.checkLogin(that.ruleForm.username, md5(that.ruleForm.password).toUpperCase())
-            /*.then(res=> {
-              console.log(res)
-              // that.$router.push('/home')
-            })
-            .catch (err => {
-              console.log(err)
-            })*/
-            that.createToken({
-              name: that.ruleForm.username, 
-              password: md5(that.ruleForm.password).toUpperCase()
+            // 调用创建token
+            this.createToken({
+              name: this.ruleForm.username, 
+              password: md5(this.ruleForm.password).toUpperCase()
+            }).then(res => {
+              // debugger
+              if (res.success) {
+                const query = this.$route.query.redirect;
+                if ( query ) {
+                  this.$router.push(`${query}`)   // 返回上一页
+                } else {
+                  this.$router.push('/home')  // 返回首页
+                }
+              } else {
+                this.isLoginErr = true
+                this.errMessage = res.err.message
+              }
             })
         } else {
           console.log('error submit!!')

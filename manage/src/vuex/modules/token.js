@@ -8,10 +8,11 @@ const state = {
 // actions
 const actions = {
   createToken ({ commit }, {name, password}) {
-    login.createToken(name, password).then( res => {
+    return login.createToken(name, password).then( res => {
       if (res.success) {
         commit(types.RECEIVE_TOKEN, res.data.token)
       }
+      return res
     })
   },
   delToken ({ commit }){
