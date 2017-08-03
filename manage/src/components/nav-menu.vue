@@ -2,23 +2,23 @@
   <div id="nav-menu">
   <!-- 默认的第一个得根据路由参数 -->
     <el-menu 
-    :default-active="active" 
+    :default-active="$route.path" 
     class="el-menu-nav container"
     mode="horizontal" 
-    :router="true" 
+    router 
     >
-      <el-menu-item index="1" :route="{path: '/'}">首页</el-menu-item>
-      <el-menu-item index="2" :route="{path: '/post'}">文章管理</el-menu-item>
-      <el-menu-item index="3" :route="{path: '/tags'}">标签管理</el-menu-item>
-      <el-menu-item index="4" :route="{path: '/categories'}">分类管理</el-menu-item>
-      <el-menu-item index="5" :route="{path: '/data'}">数据分析</el-menu-item>
-      <el-menu-item index="6" :route="{path: '/log'}">日志记录</el-menu-item>
+      <el-menu-item index="/" :route="{path: '/'}">首页</el-menu-item>
+      <el-menu-item index="/post" :route="{path: '/post'}">文章管理</el-menu-item>
+      <el-menu-item index="/tags" :route="{path: '/tags'}">标签管理</el-menu-item>
+      <el-menu-item index="/categories" :route="{path: '/categories'}">分类管理</el-menu-item>
+      <el-menu-item index="/data" :route="{path: '/data'}">数据分析</el-menu-item>
+      <el-menu-item index="/log" :route="{path: '/log'}">日志记录</el-menu-item>
       <div class="el-menu-userinfo">
         <el-submenu index="7">
           <template slot="title" index="7-1" v-if="user.username != ''">{{user.username}}</template>
           <template slot="title" index="7-1" v-else>尚未登录</template>
           <el-menu-item index="7-2" @click="login">登录</el-menu-item>
-          <el-menu-item index="7-3" @click="logout">退出</el-menu-item>
+          <el-menu-item index="" @click="logout" :route="{path: '/'}">退出</el-menu-item>
         </el-submenu>
       </div>
     </el-menu>

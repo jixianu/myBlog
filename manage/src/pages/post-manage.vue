@@ -63,7 +63,7 @@
         width="145">
         <div>
           <el-icon name="time"></el-icon>
-          <span style="margin-left: 10px">{{ row.date}}</span>
+          <span style="margin-left: 10px">{{handleDate(row.data)}}</span>
         </div>
       </el-table-column>
       <el-table-column
@@ -74,7 +74,7 @@
         :filter-method="filterCatetory"
         width="100">
         <div>
-          {{ row.category }}
+          <el-tag>{{row.categories}}</el-tag>
         </div>
       </el-table-column>
         <el-table-column
@@ -85,7 +85,7 @@
         min-width="220"
         inline-template>
         <div>
-          <el-tag class="el-tag-custome" v-for="tag, index in row.tag" close-transition :key="index">{{tag}}</el-tag>
+          <el-tag class="el-tag-custome" v-for="tag, index in row.tags" close-transition :key="index">{{tag}}</el-tag>
         </div>
       </el-table-column>
       <el-table-column
@@ -140,9 +140,9 @@
 
 <script>
 import moment from 'moment'
-import {pickerOptions} from '../utils/date.js'
-import {posts} from '../utils/mock.js'
-
+import {pickerOptions} from '../utils/date'
+// import {posts} from '../utils/mock.js'
+import { mapActions } from 'vuex'
 export default {
   name: 'post',
   props: {},
@@ -159,6 +159,15 @@ export default {
         total: 50
       }
     }
+  },
+  mounted(){
+    this.getAllPosts().then((data)=>{
+      if (data) {
+        this.tableData = this.$store.state.post.all
+        this.loading = false
+      }
+      console.log(moment(data[0].date).format('YYYY/MM/DD'))
+    })
   },
   computed: {
     filterCatetoryList() {
@@ -193,17 +202,11 @@ export default {
       }
       return arr
     },
-    filterDate(date) {
-      return date
+    filterDate(){
     }
   },
   methods: {
     fetchDate() {
-        this.loading = true;
-        setTimeout(()=>{
-          this.tableData = posts.postList
-          this.loading = false
-        }, 3000)
         /*this.loading = true;
         let loadingStartTime = new Date()
         this.$api.get_post({
@@ -229,6 +232,9 @@ export default {
       this.title = ''
       this.datetime = []
       this.fetchDate()*/
+    },
+    handleDate(date){
+      return moment(date).format('YYYY/MM/DD')
     },
     handleEdit(index, row) {
       // this.$router.push({path: '/post/' + row._id})
@@ -273,10 +279,10 @@ export default {
         }
       })
     }*/
-    }  
-  },
-  created() {
-    this.fetchDate()
+    },
+    ...mapActions('post',[
+      'getAllPosts'
+    ])
   }
 }
 </script>
@@ -295,5 +301,9 @@ export default {
 }
 .postToolBar {
   margin-bottom: 20px;
+}
+.el-tag{
+  background-color: #18bc9c;
+  border-color: #18bc9c;
 }
 </style>

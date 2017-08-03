@@ -12,7 +12,6 @@
         <div class="login-btn">
           <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
         </div>
-        <!-- <p style="font-size:12px;line-height:30px;color:#999;">第三方登录: 还没有做</p> -->
         <p v-show="isLoginErr">{{errMessage}}</p>
       </el-form>
     </div>

@@ -32,9 +32,9 @@ export default {
     }
   },
   mounted(){
-		this.getAllPosts().then(()=>{
-			this.loading = false
-		})
+	this.getAllPosts().then(()=>{
+		this.loading = false
+	})
   },
   methods: {
   	...mapActions('post',[

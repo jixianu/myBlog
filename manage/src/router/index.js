@@ -13,10 +13,16 @@ export default new Router({
         component: resolve => require(['@/pages/home'], resolve)
       },{
         path: '/post',
-        component: resolve => require(['@/pages/post-manage'], resolve)
+        component: resolve => require(['@/pages/post-manage'], resolve),
+        meta: {
+          requireAuth: true
+        }
       },{
         path: '/post/:id',
-        component: resolve => require(['@/pages/post-editor'], resolve)
+        component: resolve => require(['@/pages/post-editor'], resolve),
+        meta: {
+          requireAuth: true
+        }
       },{
         path: '/add',
         component: resolve => require(['@/pages/post-add'], resolve),
@@ -25,10 +31,16 @@ export default new Router({
         }
       },{
         path: '/tags',
-        component: resolve => require(['@/pages/tags'], resolve)
+        component: resolve => require(['@/pages/tags'], resolve),
+        meta: {
+          requireAuth: true
+        }
       },{
         path: '/categories',
-        component: resolve => require(['@/pages/categories'], resolve)
+        component: resolve => require(['@/pages/categories'], resolve),
+        meta: {
+          requireAuth: true
+        }
       },{
         path: '/data',
         component: resolve => require(['@/pages/data'], resolve)

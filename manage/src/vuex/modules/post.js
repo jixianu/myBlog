@@ -8,8 +8,9 @@ const state = {
 // actions
 const actions = {
   getAllPosts ({ commit }) {
-    post.getAll().then( posts => {
-      commit(types.RECEIVE_POSTS, { posts })
+    return  post.getAll().then( posts => {
+      commit(types.RECEIVE_POSTS,  posts )
+      return posts;
     })
   }
 }
@@ -21,7 +22,7 @@ const getters = {
 
 // mutations
 const mutations = {
-  [types.RECEIVE_POSTS] (state, { posts }) {
+  [types.RECEIVE_POSTS] (state,  posts ) {
     state.all = posts
   },
 
