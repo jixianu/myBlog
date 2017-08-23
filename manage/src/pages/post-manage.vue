@@ -302,8 +302,11 @@ export default {
 .postToolBar {
   margin-bottom: 20px;
 }
-.el-tag{
+.el-tag {
   background-color: #18bc9c;
   border-color: #18bc9c;
+}
+.row-page {
+  margin-top: 5px;
 }
 </style>

@@ -46,7 +46,10 @@ export default new Router({
         component: resolve => require(['@/pages/data'], resolve)
       },{
         path: '/log',
-        component: resolve => require(['@/pages/log'], resolve)
+        component: resolve => require(['@/pages/log'], resolve),
+        meta: {
+          requireAuth: true
+        }
       }]
     },{
     path: '/login',
