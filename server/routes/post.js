@@ -16,23 +16,24 @@ router.get('/getAll', verifyToken, async (ctx, next) =>{
 })
 // 根据id查找
 router.get('/:id', async (ctx, next) =>{
-	const _id = ctx.params.id
+  const _id = ctx.params.id
   ctx.body = await Post.getOne(_id)
 })
 // 根据id删除
 router.delete('/:id', async (ctx, next) =>{
-	const _id = ctx.params.id
+  const _id = ctx.params.id
   ctx.body = await Post.remove(_id)
 })
 // 根据id更新
 router.put('/update', async (ctx, next) =>{
-	const _id = ctx.request.body._id
-	const update = ctx.request.body
+  const _id = ctx.request.body._id
+  const update = ctx.request.body
   ctx.body = await Post.update(_id, update)
 })
 // 新增
 router.post('/add', async (ctx, next) =>{
-	const newPost = ctx.request.body
+  const newPost = ctx.request.body
+  console.log(newPost)
   ctx.body = await Post.save(newPost)
 })
 

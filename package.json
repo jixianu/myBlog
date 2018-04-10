@@ -68,6 +68,7 @@
     "koa-router": "^7.2.1",
     "koa-static": "^3.0.0",
     "koa-views": "^6.0.2",
+    "koa2-cors": "^2.0.5",
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "marked": "^0.3.6",
